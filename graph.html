@@ -32,17 +32,18 @@
         <div id="live-buttons">
             <button id="start"class="button">Start</button>
             <button id="stop"class="button" style="display:none">Stop</button>
+            <button id="pause"class="button">Pause</button>
         </div>
     </div>
 
     <div id="chart"></div>
-    <script src="script.js"></script>
+    <script src="./scripts/script.js"></script>
     <script>
             //---------------------------------------------
             var responseData;
             function _getDataByLatest(func, player) {
                 var mainData;
-                var url = "/~efr11427/wearable_web/php/getLatestData.php?func=" + func + "&player=" + player;
+                var url = "/~jmt9642/wearable_web/php/getLatestData.php?func=" + func + "&player=" + player;
 
                 var xhr = new XMLHttpRequest();
                 xhr.open("GET", url, false);
@@ -172,7 +173,7 @@
                 
                 // console.log(hr.data);
                 var now = new Date();
-                console.log(now);
+                // console.log(now);
                 // hr: randomNumberBounds(0, 2.5),
                 //     skin: randomNumberBounds(0, 10),
                 //     ac: randomNumberBounds(0, 7)
