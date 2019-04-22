@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Realtime Data Line Graph</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta charset='utf-8' />
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/charts.css">
+
+    <script src="scripts/jquery.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <style>
+    body {
+        
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        
+    }
+    #chart {
+      max-width: 100%; 
+      max-height: 600px;
+    }
+    </style>
+  </head>
+  <body> 
+    <div id="nav">
+        <button id="home" class="button-primary"><a href="/index.php">Home</a></button>
+    </div>
+
+    <div class="container">
+        <div id="live-buttons">
+            <button id="start"class="button">Start</button>
+            <button id="stop"class="button" style="display:none">Stop</button>
+        </div>
+    </div>
+
+    <div id="chart"></div>
+    <script src="script.js"></script>
+    <script>
+            //---------------------------------------------
+            var responseData;
+            function _getDataByLatest(func, player) {
+                var mainData;
+                var url = "/~efr11427/wearable_web/php/getLatestData.php?func=" + func + "&player=" + player;
+
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", url, false);
+            
+                xhr.onreadystatechange = function() {
+                    
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                     
+                        var json = JSON.parse(xhr.response);
+                     
+                    responseData = json;
+                    }
+                }
+                xhr.send();
+            }
+
+
+            function showLoading() {
+                console.log("loading....");
+            }
+
+            // _getDataByLatest("gsr", 1);
+            // _getDataByLatest("hr", 1);
+            // _getDataByLatest("skintemp", 1);
+            // _getDataByLatest("ac", 1);
+            // _getDataByLatest("ba", 1);
+
+            function getGSR() {
+                _getDataByLatest("gsr", 1);
+                return responseData;
+            }
+            
+            function getHR() {
+                _getDataByLatest("hr", 1);
+                return responseData;
+            }
+
+            function getSkin() {
+                _getDataByLatest("skintemp", 1);
+                return responseData;
+            }
+
+            function getAC() {
+                _getDataByLatest("ac", 1);
+                return responseData;
+            }
+
+            // Transform dataX, dataY, dataZ into instantaneous acceleration data
+            function acTransform(data) {
+                // sqrt( (xn - xp)^2 + (yn-yp)^2 + (zn-zp)^2 )
+                // where xp is prior x and xn is current x.
+                var dataTransform, xn, xp, yn, yp, zn, zp;
+                var newData = [];
+                for (var i = 0; i < data.length; i++) { // a lot of overlap if i++
+                    if (i > 0 && data[i].id == data[i - 1].id) {
+                        xn = data[i].dataX;
+                        xp = data[i - 1].dataX;
+                        yn = data[i].dataY;
+                        yp = data[i - 1].dataY;
+                        zn = data[i].dataZ;
+                        zp = data[i - 1].dataZ;
+
+                        var tmp1 = Math.pow(xn - xp, 2);
+                        var tmp2 = Math.pow(yn - yp, 2);
+                        var tmp3 = Math.pow(zn - zp, 2);
+                        dataTransform = Math.sqrt(tmp1 + tmp2 + tmp3);
+                    }
+                }
+                return dataTransform;
+            }
+            
+            // gsr = getGSR();
+            // console.log(gsr);
+            // console.log(gsr.data);
+            //---------------------------------------------
+            var lineArr = [];
+            var MAX_LENGTH = 100;
+            var duration = 500;
+            var chart = realTimeLineChart();
+
+            function randomNumberBounds(min, max) {
+            return Math.floor(Math.random() * max) + min;
+            }
+            // x: randomNumberBounds(0, 5),
+            function seedData() {
+                var now = new Date();
+                for (var i = 0; i < MAX_LENGTH; ++i) {
+                    // var gsr = getGSR(); 
+                    // var hr = getHR(); // It Works!!
+                    // var skin = getSkin();
+                    // var ac = getAC();
+                    // Getting AC data
+                    // var acArray = [];
+                    // for (var i = 0; i < 2; i++) {
+                    //     var ac = getAC();
+                    //     acArray.push(ac);
+                    // }
+                    // var acInstant = acTransform(acArray);
+                    // var acTotal = Math.sqrt((ac.dataY*ac.dataY)+(ac.dataX*ac.dataX)+(ac.dataZ*ac.dataZ));
+
+                    // console.log(hr.data);
+                    lineArr.push({
+                    time: new Date(now.getTime() - ((MAX_LENGTH - i) * duration)),
+                    gsr: 1, // kOHM ->Megaohms
+                    hr: 1,
+                    skin: 1,
+                    ac: 1,
+                    });
+                }
+            }
+            //x: randomNumberBounds(0, 5)
+            function updateData() {
+
+                var gsr = getGSR(); 
+                var hr = getHR(); // Works Baby!! 
+                var skin = getSkin();
+                var ac = getAC();
+                //Getting AC data
+                // var acArray = [];
+                // for (var i = 0; i < 2; ++i) {
+                //     var ac = getAC();
+                //     acArray.push(ac);
+                // }
+                // var acInstant = acTransform(acArray);
+                // console.log(acInstant);
+                var acTotal = Math.sqrt((ac.dataY*ac.dataY)+(ac.dataX*ac.dataX)+(ac.dataZ*ac.dataZ));
+                
+                // console.log(hr.data);
+                var now = new Date();
+                console.log(now);
+                // hr: randomNumberBounds(0, 2.5),
+                //     skin: randomNumberBounds(0, 10),
+                //     ac: randomNumberBounds(0, 7)
+                var lineData = {
+                    time: now,
+                    gsr: gsr.data / 1000, // kOHM ->Megaohms
+                    hr: hr.data,
+                    skin: skin.data,
+                    ac: acTotal.toFixed(5),
+                };
+                lineArr.push(lineData);
+
+                if (lineArr.length > 30) {
+                    lineArr.shift();
+                }
+                d3.select("#chart").datum(lineArr).call(chart);
+            }
+
+            function resize() {
+            if (d3.select("#chart svg").empty()) {
+                return;
+            }
+            chart.width(+d3.select("#chart").style("width").replace(/(px)/g, ""));
+            d3.select("#chart").call(chart);
+            }
+
+            document.addEventListener("DOMContentLoaded", function() {
+            seedData();
+            window.setInterval(updateData, 500);
+            d3.select("#chart").datum(lineArr).call(chart);
+            d3.select(window).on('resize', resize);
+            });
+            </script>
+</body>
+</html>

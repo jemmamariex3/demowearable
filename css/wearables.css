@@ -1,0 +1,281 @@
+@charset "utf-8";
+/* CSS Document */
+
+html {height: 100%; width: 100%;}
+body {width: 100%; height: 100%; margin: 0; padding: 0; background-color: white;}
+
+#wrapper
+{
+    min-height: 100%;
+    position: relative;
+    /*border: 1px solid #222222;*/
+    border: none;
+    padding: auto;
+    margin: auto;
+}
+
+h1
+{
+    color: #333;
+    margin: auto;
+    padding: auto;
+}
+
+#buttonsDiv
+{
+    width: 202px;
+    height: auto;
+    padding: auto;
+    margin: auto;
+    background: grey;
+    position: fixed;
+}
+
+.buttonDesign
+{
+    font-family: "Times New Roman", Times, serif;
+    height: 50px;
+    width: 200px;
+    margin-bottom: 1px;
+    padding: auto;
+    color: white;
+    outline: none;
+    border: 2px;
+    border-color: black;
+    border-style: none;
+    background-color: transparent;
+}
+.buttonDesign:hover
+{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: hvr-back-pulse;
+    -webkit-animation-duration: 2s;
+    animation-name: hvr-back-pulse;
+    animation-duration: 2s;
+}
+.buttonDesign:active
+{
+    background-color: teal;
+}
+
+@-webkit-keyframes hvr-back-pulse {
+  50% {
+    /*background-color: rgba(32, 152, 209, 0.75);*/
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes hvr-back-pulse {
+  50% {
+    /*background-color: rgba(32, 152, 209, 0.75);*/
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+#results
+{
+    position: absolute;
+    text-align: center;
+    background: none;
+    width: 50%;
+    left: 25%;
+    margin: auto;
+    padding: auto;
+}
+
+#player1
+{
+    position: relative;
+    background-color: none;
+    margin-left: 550px;
+    padding: auto;
+    width: 50%;
+    height: 50px;
+}
+
+#results2
+{
+    position: absolute;
+    text-align: center;
+    background-color: none;
+    width: auto;
+    margin: auto;
+    padding: auto;
+    z-index: 1;
+}
+
+#results3
+{
+    position: absolute;
+    text-align: center;
+    background-color: none;
+    left: 30%;
+    width: auto;
+    margin: auto;
+    padding: auto;
+    z-index: 1;
+}
+
+#results4
+{
+    position: absolute;
+    text-align: center;
+    background-color: none;
+    left: 60%;
+    width: auto;
+    margin: auto;
+    padding: auto;
+    z-index: 1;
+}
+
+#player2
+{
+    position: relative;
+    background-color: none;
+    margin-left: 550px;
+    padding: auto;
+    width: 50%;
+    height: 50px;
+}
+
+#results5
+{
+    position: absolute;
+    text-align: center;
+    background-color: none;
+    width: auto;
+    margin: auto;
+    padding: auto;
+    z-index: 1;
+}
+
+#results6
+{
+    position: absolute;
+    text-align: center;
+    background-color: none;
+    left: 30%;
+    width: auto;
+    margin: auto;
+    padding: auto;
+    z-index: 1;
+}
+
+#results7
+{
+    position: absolute;
+    text-align: center;
+    background-color: none;
+    left: 60%;
+    width: auto;
+    margin: auto;
+    padding: auto;
+    z-index: 1;
+}
+
+#player3
+{
+    position: relative;
+    background-color: none;
+    margin-left: 550px;
+    padding: auto;
+    width: 50%;
+    height: 50px;
+}
+
+#results8
+{
+    position: absolute;
+    text-align: center;
+    background-color: none;
+    width: auto;
+    margin: auto;
+    padding: auto;
+    z-index: 1;
+}
+
+#results9
+{
+    position: absolute;
+    text-align: center;
+    background-color: none;
+    left: 30%;
+    width: auto;
+    margin: auto;
+    padding: auto;
+    z-index: 1;
+}
+
+#results10
+{
+    position: absolute;
+    text-align: center;
+    background-color: none;
+    left: 60%;
+    width: auto;
+    margin: auto;
+    padding: auto;
+    z-index: 1;
+}
+
+#player4
+{
+    position: relative;
+    background-color: none;
+    margin-left: 550px;
+    padding: auto;
+    width: 50%;
+    height: 50px;
+}
+
+#results11
+{
+    position: absolute;
+    text-align: center;
+    background-color: none;
+    width: auto;
+    margin: auto;
+    padding: auto;
+    z-index: 1;
+}
+
+#results12
+{
+    position: absolute;
+    text-align: center;
+    background-color: none;
+    left: 30%;
+    width: auto;
+    margin: auto;
+    padding: auto;
+    z-index: 1;
+}
+
+#results13
+{
+    position: absolute;
+    text-align: center;
+    background-color: none;
+    left: 60%;
+    width: auto;
+    margin: auto;
+    padding: auto;
+    z-index: 1;
+}
+
+#playerHeader1
+{
+    visibility: hidden
+}
+#playerHeader2
+{
+    visibility: hidden;
+}
+#playerHeader3
+{
+    visibility: hidden;
+}
+#playerHeader4
+{
+    visibility: hidden;
+}

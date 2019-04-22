@@ -1,0 +1,313 @@
+body {
+	margin: 20px;
+	padding: 0px;
+	/* text-align: center; */
+	text-indent: 1em;
+	background-color: #CCCCCC;
+	background-image: none;
+	color: #000000;
+}
+
+.strongredtext { font-weight: bold; color: darkred; }
+.greentextunderlined { color: darkgreen; text-decoration: underline;  }
+
+a:link		{ color: #ccccff }
+a:active	{ color: #993333 }
+a:visited	{ color: #ccccff }
+a:hover		{ color: #ffff00 }
+.main {
+	display: block;
+	padding-left: auto;
+	padding-right: auto;
+	padding-bottom: 1em;
+	text-align: left;
+	width: 100%;
+}
+.limited {
+	/* max-width: 36em; */
+}
+.mainCenter {
+	display: block;
+	padding-left: auto;
+	padding-right: auto;
+	padding-bottom: 1em;
+	text-align: center;
+        margin: auto;
+}
+
+.maintitle {
+	margin: auto;
+	text-align: center;
+	margin-top: 20%;
+	/*  margin-right: 40%; */
+}
+
+.statsTable {
+	width: 100%;
+	margin: auto;
+	border: 1px solid black;
+	color: #000000;
+}
+
+
+.playerTable tr td:nth-child(odd) {
+	background: #bdfcc9;
+}
+
+.playerTable tr td:nth-child(even) {
+	background: #e0ffff;
+}
+
+.playerTable tr td {
+	padding-left: 1ex;
+}
+ 
+.statsTable  tr th {
+	text-align: center;
+	background: #4CAF50;
+	color: white;
+}
+
+.statsTable  tr  th, .statsTable tr td {
+    border: 1px solid black;
+}
+
+
+.stats {
+	text-align: center;
+}
+
+#sqTable {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	border-spacing: 0px;
+	background-color: #555555;
+	color: #000000;
+	user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	-webkit-user-select: none;
+}
+.sq, .score {
+	margin: 0px;
+	border: 2px solid;
+	border-color: #eeeeee #999999 #999999 #eeeeee;
+	background-color: #cccccc;
+	padding: 0px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.playerTable {
+	border-style: none; 
+	table-layout: fixed; 
+	width: 100%;
+	font-size: small;
+}
+
+.explanation {
+	padding-top: 1em;
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-bottom: 1em;
+	text-align: left;
+	font-size: smaller;
+	border: 2px solid;
+	width: 60%;
+	margin: auto;
+	border-color: #eeeeee #999999 #999999 #eeeeee;
+}
+
+#credit {
+	font-size: 60%;
+}
+
+.sq {
+	box-sizing: border-box; /* avoids jumpiness when zoomed */
+	width: 24px;
+	max-width: 24px; /* avoids being resized if text is too long (iOS) */
+	min-width: 24px;
+	height: 24px;
+	min-height: 24px;
+	max-height: 24px;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 18px;
+	cursor: pointer;
+}
+.sqExposed {
+	background-color: #bbbbbb;
+	border-width: 1px;
+	border-color: #999999;
+	padding: 1px;
+	cursor: default;
+}
+.sqExploded, .sqIncorrect {
+	color: #ff0000;
+}
+.sq1 {
+	color: #3333cc;
+}
+.sq2 {
+	color: #006600;
+}
+.sq3 {
+	color: #cc0000;
+}
+.sq4 {
+	color: #660066;
+	border: #000000;
+}
+.sq5 {
+	color: #006666;
+}
+/* sq0, sq6, sq7, and sq8 use basic black */
+div.counter {
+	margin: 10px;
+	border: 1px inset #eeeeee;
+	padding-right: 3px;
+	width: 1.75em;
+	background-color: #000000;
+	color: #ff6666;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 1;
+	text-align: right;
+}
+#mines {
+	float: left;
+}
+#timer {
+	float: right;
+}
+#smiley {
+	width: 24px;
+	height: 24px;
+	margin: 2px;
+	border: 3px groove #eeeeee;
+	padding: 6px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+h1#chooseH1 {
+	font-size: 265%;
+}
+
+
+select#playerSelect {
+	width: 400px;
+	height: 100px;
+        padding: 1.5em;
+	font-size: 125%;
+}
+
+
+input[type=button]#submitButton {
+	width: 150px;
+	height: 50px;
+	font-weight: 500;
+	font-size: 125%;
+}
+
+/*drawing a vertical line across the game board*/
+/*
+#sq-3 {
+	border-right-color: #000000;
+}
+#sq-11 {
+	border-right-color: #000000;
+}
+#sq-19 {
+	border-right-color: #000000;
+}
+#sq-27 {
+	border-right-color: #000000;
+	border-bottom-color: #000000;
+}
+#sq-35 {
+	border-right-color: #000000;
+	border-top-color: #000000;
+}
+#sq-43 {
+	border-right-color: #000000;
+}
+#sq-51 {
+	border-right-color: #000000;
+}
+#sq-59 {
+	border-right-color: #000000;
+}
+*/
+/*################################*/
+/*
+#sq-4 {
+	border-left-color: #000000;
+}
+#sq-12 {
+	border-left-color: #000000;
+}
+#sq-20 {
+	border-left-color: #000000;
+}
+#sq-36 {
+	border-left-color: #000000;
+	border-top-color: #000000;
+}
+#sq-44 {
+	border-left-color: #000000;
+}
+#sq-52 {
+	border-left-color: #000000;
+}
+#sq-60 {
+	border-left-color: #000000;
+}
+*/
+/*drawing a horizontal line across the game board*/
+/*
+#sq-24 {
+	border-bottom-color: #000000;
+}
+#sq-25 {
+	border-bottom-color: #000000;
+}
+#sq-26 {
+	border-bottom-color: #000000;
+}
+#sq-28 {
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+}
+#sq-29 {
+	border-bottom-color: #000000;
+}
+#sq-30 {
+	border-bottom-color: #000000;
+}
+#sq-31 {
+	border-bottom-color: #000000;
+}
+*/
+/*################################*/
+/*
+#sq-32 {
+	border-top-color: #000000;
+}
+#sq-33 {
+	border-top-color: #000000;
+}
+#sq-34 {
+	border-top-color: #000000;
+}
+#sq-37 {
+	border-top-color: #000000;
+}
+#sq-38 {
+	border-top-color: #000000;
+}
+#sq-39 {
+	border-top-color: #000000;
+}
+*/
