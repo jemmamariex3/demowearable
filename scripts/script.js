@@ -122,9 +122,7 @@ function realTimeLineChart() {
             .transition()
               .on("start", tick);
         }
-      });
-
-      
+      });     
     }
   
     chart.margin = function(_) {

@@ -71,6 +71,7 @@
             // _getDataByLatest("ac", 1);
             // _getDataByLatest("ba", 1);
 
+            //_getDataByLatest (in the getLatestData.php file)
             function getGSR() {
                 _getDataByLatest("gsr", 1);
                 return responseData;
@@ -122,12 +123,14 @@
             var lineArr = [];
             var MAX_LENGTH = 100;
             var duration = 500;
-            var chart = realTimeLineChart();
+            var getChart = realTimeLineChart();
 
             function randomNumberBounds(min, max) {
             return Math.floor(Math.random() * max) + min;
             }
             // x: randomNumberBounds(0, 5),
+
+            // passes time and gsr, hr, skin, and ac values into lineArr array.
             function seedData() {
                 var now = new Date();
                 for (var i = 0; i < MAX_LENGTH; ++i) {
@@ -155,6 +158,7 @@
                 }
             }
             //x: randomNumberBounds(0, 5)
+            //function is a trigger to call the metric data functions to pull information
             function updateData() {
 
                 var gsr = getGSR(); 
@@ -177,6 +181,8 @@
                 // hr: randomNumberBounds(0, 2.5),
                 //     skin: randomNumberBounds(0, 10),
                 //     ac: randomNumberBounds(0, 7)
+
+                //stores the returned metric data into new variables in this line data object
                 var lineData = {
                     time: now,
                     gsr: gsr.data / 1000, // kOHM ->Megaohms
@@ -185,27 +191,44 @@
                     ac: acTotal.toFixed(5),
                 };
                 lineArr.push(lineData);
+                //lineData object is pushed into the lineArr 
 
                 if (lineArr.length > 30) {
                     lineArr.shift();
+                //     The shift() method removes the first item of an array.
+                //     Note: This method changes the length of the array.
+                //     Note: The return value of the shift method is the removed item.
+                //     Tip: To remove the last item of an array, use the pop() method.
                 }
-                d3.select("#chart").datum(lineArr).call(chart);
+                d3.select("#chart").datum(lineArr).call(getChart);
             }
 
             function resize() {
-            if (d3.select("#chart svg").empty()) {
-                return;
-            }
-            chart.width(+d3.select("#chart").style("width").replace(/(px)/g, ""));
-            d3.select("#chart").call(chart);
+                if (d3.select("#chart svg").empty()) {
+                    return;
+                }
+                chart.width(+d3.select("#chart").style("width").replace(/(px)/g, ""));
+                d3.select("#chart").call(getChart);
             }
 
+            // DOMContentLoaded event fires when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.
             document.addEventListener("DOMContentLoaded", function() {
-            seedData();
-            window.setInterval(updateData, 500);
-            d3.select("#chart").datum(lineArr).call(chart);
-            d3.select(window).on('resize', resize);
+
+                //calls seedData function
+                seedData();
+
+                //calls the updateDate function every half second
+                window.setInterval(updateData, 500);
+                d3.select("#chart").datum(lineArr).call(getChart); 
+                //.call function used for calling a function() passes in param.. chart in this case is realTimeLineChart() line 125
+                // .datum: Gets or sets the bound data for each selected element. it does not compute a join and does not affect indexes or the enter and exit selections.
+                //.select() gets the div using id or class
+                
+                d3.select(window).on('resize', resize);
             });
             </script>
 </body>
 </html>
+
+//circle
+<!-- <g class="object"><g class="pos" transform="translate(15,0) "><circle r="5" fill="red" cx="0" cy="15"></circle></g></g> -->
