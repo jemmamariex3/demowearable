@@ -44,6 +44,8 @@ function realTimeLineChart() {
           .y(function(d) { return y(d.value); });
   
         var svg = d3.select(this).selectAll("svg").data([data]);
+        var selectCircle = svg.selectAll(".circle").data(data)
+        
         var gEnter = svg.enter().append("svg").append("g");
         gEnter.append("g").attr("class", "axis x");
         gEnter.append("g").attr("class", "axis y");
@@ -109,7 +111,8 @@ function realTimeLineChart() {
           .text(function(d) {
             return d.label.toUpperCase() + ": " + d.values[d.values.length-1].value;
           });
-  
+
+    
         // For transitions https://bl.ocks.org/mbostock/1642874
         function tick() {
           d3.select(this)
@@ -131,11 +134,11 @@ function realTimeLineChart() {
       return chart;
     };
   
-    chart.width = function(_) {
-      if (!arguments.length) return width;
-      width = _;
-      return chart;
-    };
+    // chart.width = function(_) {
+    //   if (!arguments.length) return width;
+    //   width = _;
+    //   return chart;
+    // };
   
     chart.height = function(_) {
       if (!arguments.length) return height;
