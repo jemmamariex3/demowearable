@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a301b14d-67b1-47a5-adc7-4c77f42971ed" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph.html" beforeDir="false" afterPath="$PROJECT_DIR$/graph.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/script.js" afterDir="false" />
-    </list>
+    <list default="true" id="a301b14d-67b1-47a5-adc7-4c77f42971ed" name="Default" comment="added the mouse over" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +22,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="68" column="34" lean-forward="true" selection-start-line="68" selection-start-column="34" selection-end-line="68" selection-end-column="34" />
+            <state relative-caret-position="159">
+              <caret line="177" column="23" selection-start-line="177" selection-start-column="23" selection-end-line="177" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -42,6 +38,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>halted</find>
+      <find>color</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -67,14 +64,14 @@
         <option value="$PROJECT_DIR$/scripts/getResultsScript.js" />
         <option value="$PROJECT_DIR$/charts.php" />
         <option value="$PROJECT_DIR$/../script.js" />
-        <option value="$PROJECT_DIR$/scripts/script.js" />
         <option value="$PROJECT_DIR$/graph.html" />
+        <option value="$PROJECT_DIR$/scripts/script.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="367" />
-    <option name="width" value="1098" />
+    <option name="x" value="250" />
+    <option name="width" value="1606" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -82,7 +79,25 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="demowearable" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demowearable" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demowearable" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demowearable" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -146,15 +161,23 @@
       <workItem from="1555996765535" duration="1548000" />
       <workItem from="1556621424163" duration="4199000" />
     </task>
+    <task id="LOCAL-00001" summary="added the mouse over">
+      <created>1556629742553</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1556629742553</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88878000" />
+    <option name="totallyTimeSpent" value="90566000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="367" y="0" width="1098" height="1047" extended-state="0" />
+    <frame x="250" y="0" width="1606" height="1047" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.4825291" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.32589287" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -168,7 +191,7 @@
       <window_info anchor="bottom" id="Database Console" order="8" weight="0.32941177" />
       <window_info anchor="bottom" id="Messages" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.39130434" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.39059082" />
       <window_info active="true" anchor="bottom" id="Version Control" order="12" visible="true" weight="0.32932165" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" weight="0.3285124" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -182,6 +205,10 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.php" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added the mouse over" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the mouse over" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_d3js.org_d3.v4.js" />
@@ -328,8 +355,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="68" column="34" lean-forward="true" selection-start-line="68" selection-start-column="34" selection-end-line="68" selection-end-column="34" />
+        <state relative-caret-position="159">
+          <caret line="177" column="23" selection-start-line="177" selection-start-column="23" selection-end-line="177" selection-end-column="23" />
         </state>
       </provider>
     </entry>
